@@ -1,0 +1,13 @@
+version: "2"
+
+services:
+  proftpd:
+    image: djdefi/rpi-proftpd
+    volumes:
+      - /mnt/ftp:/ftp
+    ports:
+      - "20:20"
+      - "21:21"
+    environment:
+      - USERNAME=ftpuser
+      - PASSWORD=ftppass
