@@ -1,0 +1,9 @@
+#!/bin/bash -e
+echo Setting credentials to $USERNAME:$PASSWORD
+PASSWORD=$(perl -e 'print crypt($ARGV[0], "password")' $PASSWORD)
+
+sed s/CREATE_MAIL_SPOOL=yes/CREATE_MAIL_SPOOL=no/ -i /etc/default/useradd
+groupadd -g 1000 $USERNAME
+useradd -g 1000 -m --password $PASSWORD $USERNAME
+chown -R $USERNAME:$USERNAME /ftp
+exec proftpd --nodaemon
