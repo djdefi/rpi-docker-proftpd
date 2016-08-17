@@ -7,7 +7,8 @@ apk add --no-cache shadow bash perl proftpd
 
 COPY launch /launch
 COPY proftpd.conf /etc/proftpd.conf
-RUN mkdir /ftp
+RUN chmod +x /launch && \
+    mkdir /ftp
 
 EXPOSE 20 21
 
