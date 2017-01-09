@@ -10,4 +10,4 @@ else
   useradd -g 1000 -m --password $PASSWORD $USERNAME
   chown -R $USERNAME:$USERNAME /ftp
 fi
-exec proftpd --nodaemon
+exec /usr/local/sbin/proftpd -n -c /etc/proftpd.conf
