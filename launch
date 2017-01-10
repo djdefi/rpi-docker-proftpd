@@ -1,5 +1,5 @@
 #!/bin/bash -e
-if [ $(getent group admin) ]; then
+if [ $(getent group $USERNAME) ]; then
   echo "Starting FTP Server"
 else
   echo Setting credentials to $USERNAME:$PASSWORD
