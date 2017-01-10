@@ -16,7 +16,8 @@ RUN set -x \
         curl \
         mariadb-client-libs \
         bash \
-        perl
+        perl \
+        shadow
     && apk add --no-cache --virtual .build-deps \
         $PROFTPD_DEPS \
     && curl -fSL ftp://ftp.proftpd.org/distrib/source/proftpd-${PROFTPD_VERSION}.tar.gz -o proftpd.tgz \
