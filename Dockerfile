@@ -10,6 +10,10 @@ ENV PROFTPD_DEPS \
   make \
   mariadb-dev
 
+RUN echo http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
+  apk update && \
+  apk upgrade
+
 RUN set -x \
     && apk add --no-cache --virtual .persistent-deps \
         ca-certificates \
