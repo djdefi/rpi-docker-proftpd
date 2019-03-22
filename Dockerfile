@@ -1,14 +1,13 @@
 FROM djdefi/rpi-alpine
 
-ENV PROFTPD_VERSION 1.3.6rc2
+ENV PROFTPD_VERSION 1.3.6
 
 # persistent / runtime deps
 ENV PROFTPD_DEPS \
   g++ \
   gcc \
   libc-dev \
-  make \
-  mariadb-dev
+  make
 
 RUN echo http://nl.alpinelinux.org/alpine/edge/community >> /etc/apk/repositories && \
   apk update && \
