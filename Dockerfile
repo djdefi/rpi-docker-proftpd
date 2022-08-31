@@ -1,4 +1,4 @@
-FROM djdefi/rpi-alpine
+FROM arm32v7/alpine
 
 ENV PROFTPD_VERSION 1.3.6
 
